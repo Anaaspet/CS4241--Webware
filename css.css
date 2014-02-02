@@ -1,3 +1,8 @@
+/*
+Andrew Iovanna
+awiovanna
+Main CSS file for CS 4241: Webware
+*/
 
 .header {
 background-color:#020304;
@@ -23,11 +28,12 @@ h1 {
 	height: 50px;
 }
 
-a:link {color:inherit;}      /* unvisited link */
-a:visited {color:inherit;}  /* visited link */
-a:hover {color:red;}  /* mouse over link */
-a:active {color:inherit;}  /* selected link */
+a:link {color:inherit;}   
+a:visited {color:inherit;}  
+a:hover {color:red;} 
+a:active {color:inherit;}  
 
 a {
 	max-width: 200px;
+	text-decoration: none;
 }
