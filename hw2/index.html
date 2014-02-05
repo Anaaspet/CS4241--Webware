@@ -2,13 +2,13 @@
 <!--
 Andrew Iovanna
 awiovanna
-Page for project 1 for CS 4241: Webware 
+Page for project 2 for CS 4241: Webware 
 --> 
 
 <html>
 	<head>
 		<link href="../css.css" rel="stylesheet" type="text/css"/>
-		<title> Webware: Project 1</title>
+		<title> Webware: Project 2</title>
 	</head>
 	
 	<style>
@@ -30,9 +30,9 @@ Page for project 1 for CS 4241: Webware
 		
 		input::-webkit-outer-spin-button,
 		input::-webkit-inner-spin-button {
-		    /* display: none; <- Crashes Chrome on hover */
+		    display: none; 
 		    -webkit-appearance: none;
-		    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+		    margin: 0; 
 		}
 	</style>
 	
@@ -58,7 +58,7 @@ Page for project 1 for CS 4241: Webware
 			</div><br>
 			<input type="text" id="userGuess">
 			<input type="button" value="Make a guess" onclick="checkAnswer()"><br><br>
-			<input type="button" value="Give up" onclick="giveUp()">
+			<input type="button" id="giveUpButton" value="Give up" onclick="giveUp()">
 			<h2 id="response">
 			</h2>
 			<h2 id="giveUpText">
@@ -70,6 +70,7 @@ Page for project 1 for CS 4241: Webware
 			var randomNumber = Math.floor(Math.random()*100) + 1; 
 			var lower = 1;
 			var upper = 100;
+			var playAgain = false 
 			document.getElementById("lowNum").innerHTML = lower;
 			document.getElementById("highNum").innerHTML = upper;
 			
@@ -92,7 +93,9 @@ Page for project 1 for CS 4241: Webware
 				
 					if((guess) == (randomNumber)) {
 						document.getElementById("response").innerHTML = "Congratulations! You won! Now go outside.";
-						document.getElementById("response").style.color = "green"; 
+						document.getElementById("response").style.color = "green";
+						document.getElementById("giveUpButton").value = "Play Again?" 
+						playAgain = true; 
 					}
 					
 					else if ((guess) < (randomNumber)) {
@@ -108,9 +111,15 @@ Page for project 1 for CS 4241: Webware
 			}
 			
 			function giveUp() {
-				document.getElementById("response").innerHTML = ""; 
-				document.getElementById("giveUpText").innerHTML = "Ok fine, the answer is:";
-				document.getElementById("giveUpNum").innerHTML = randomNumber; 
+				if(playAgain)
+				{
+					location.reload();
+				}
+				else {
+					document.getElementById("response").innerHTML = ""; 
+					document.getElementById("giveUpText").innerHTML = "Ok fine, the answer is:";
+					document.getElementById("giveUpNum").innerHTML = randomNumber; 
+				}
 			}
 		</script>
 	</body>
