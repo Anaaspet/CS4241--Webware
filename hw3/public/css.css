@@ -1,0 +1,39 @@
+/*
+Andrew Iovanna
+awiovanna
+Main CSS file for CS 4241: Webware
+*/
+
+.header {
+background-color:#020304;
+display:inline-block;
+height: 80px;
+width:100%;
+color: white;
+text-align: center;
+vertical-align: middle;
+font-size: 40px;
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+padding-top: 20px;
+}
+
+.main-content {
+	font-family: source-sans-pro, sans-serif;
+	margin-top: 50px;
+	padding-left: 30%;
+	padding-right: 30%;
+}
+
+h1 {
+	height: 50px;
+}
+
+a:link {color:inherit;}   
+a:visited {color:inherit;}  
+a:hover {color:red;} 
+a:active {color:inherit;}  
+
+a {
+	max-width: 200px;
+	text-decoration: none;
+}
